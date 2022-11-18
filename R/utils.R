@@ -1,4 +1,16 @@
 #' @noRd
+latest_r_version_devel <- function(file_url = file_url) {
+  r_latest <- "devel"
+  r_current <- getRversion()
+  structure(
+    list(update_avail = TRUE,
+         latest = r_latest,
+         url = file_url),
+    current = getRversion(),
+    OS_minimal = getRversion()
+  )
+}
+
 latest_r_version <- function() {
         cran <- "http://cran.rstudio.com/bin/macosx/"
         version_regex <- "(\\d+)?\\.(\\d+)?\\.(\\d+)?"
