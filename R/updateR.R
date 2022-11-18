@@ -46,7 +46,7 @@ updateR <- function(auto = TRUE, .Rprofile = NULL,
   needed_packages <- paste(unlist(needed_packages))
   save(needed_packages, file = "/tmp/needed_packages.RData")
 
-  if (!file_url) {
+  if (!missing(file_url)) {
     latest <- latest_r_version_devel()
   } else {
     latest <- latest_r_version()
