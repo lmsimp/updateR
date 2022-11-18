@@ -21,7 +21,7 @@
 #' }
 #' @export
 updateR <- function(auto = TRUE, .Rprofile = NULL, 
-                    file_url = "https://mac.r-project.org/high-sierra/R-devel/R-devel.pkg") {
+                    devel = TRUE) {
   # first test for on OS
   stopifnot(.Platform$OS.type == "unix")
 
@@ -46,7 +46,7 @@ updateR <- function(auto = TRUE, .Rprofile = NULL,
   needed_packages <- paste(unlist(needed_packages))
   save(needed_packages, file = "/tmp/needed_packages.RData")
 
-  if (!missing(file_url)) {
+  if (devel) {
     latest <- latest_r_version_devel()
   } else {
     latest <- latest_r_version()

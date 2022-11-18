@@ -1,5 +1,6 @@
 #' @noRd
-latest_r_version_devel <- function(file_url = file_url) {
+latest_r_version_devel <- function(
+    file_url = "https://mac.r-project.org/high-sierra/R-devel/R-devel.pkg") {
   r_latest <- "devel"
   r_current <- getRversion()
   structure(
